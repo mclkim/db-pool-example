@@ -9,10 +9,10 @@ class DB {
     private static $factory;
     private static $config = array(
         'write' =>
-            array('mysql:dbname=pdev;host=localhost;charset=utf8'),
+            array('mysql:dbname=user;host=localhost;charset=utf8'),
         'read' =>
           // Add more options for scalable slave servers
-            array('mysql:dbname=pdev;host=localhost;charset=utf8')
+            array('mysql:dbname=user;host=localhost;charset=utf8')
         );
 
     public static function getFactory() {
