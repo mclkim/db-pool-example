@@ -24,6 +24,7 @@ class DB {
 
     // Static method to return a database connection:
     public function getConnection($serverType) {
+    	// If a connection exists and it's a write connection, use it.  If it's a write operation on a read connection, replace it
         if ($this->db && ($serverType == $this->serverType) || $this->serverType == 'write') {
             return $this->db;
             }
