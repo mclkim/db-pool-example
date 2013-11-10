@@ -69,7 +69,7 @@ class DB {
             $updateStatement .= $column . "=:" . $column . ",";
             $executeArray[':' . $column] = $input->data->{$column};
             }
-        preg_match('/\:[A-Za-z0-9\_]+/', $input->where, $whereIds);
+        preg_match_all('/\:[A-Za-z0-9\_]+/', $input->where, $whereIds);
         foreach($whereIds as $id) {
             $executeArray[$id] = $input->data->{preg_replace('/:/', '', $id)};
             }
